@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[100];
+    int i;
+
+    printf("Enter a string: ");
+    scanf("%99s", s);
+
+    for (i = 0; s[i] != '\0'; i++) {
+        if (isalpha((unsigned char)s[i]))
+            printf("%c - Identifier\n", s[i]);
+        else if (isdigit((unsigned char)s[i]))
+            printf("%c - Number\n", s[i]);
+        else
+            printf("%c - Operator/Symbol\n", s[i]);
+    }
+
+    return 0;
+}
